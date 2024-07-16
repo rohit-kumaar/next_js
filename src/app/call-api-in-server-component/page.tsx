@@ -1,8 +1,10 @@
 import React from "react";
+import Button from "./button";
 
 interface IUser {
   id: any;
   name: string;
+  email: any;
 }
 
 async function fetchUserData() {
@@ -20,7 +22,9 @@ export default async function page() {
   return (
     <ul>
       {userData.map((user: IUser) => (
-        <li key={user.id}>{user?.name}</li>
+        <li key={user.id}>
+          {user?.name} <Button email={user.email}></Button>
+        </li>
       ))}
     </ul>
   );
