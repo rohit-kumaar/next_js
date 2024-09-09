@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <main>
-      <h1>Rohit Kumar</h1>
-    </main>
-  );
+import React from "react";
+
+export default function page() {
+  return <h1>Rohit Kumar</h1>;
 }
