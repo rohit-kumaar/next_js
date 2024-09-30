@@ -1,14 +1,24 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default nextConfig;
-
-import path, { join } from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
-const __dirname = path.dirname(__filename); // get the name of the directory
-
-export const sassOptions = {
-  includePaths: [join(__dirname, "styles")],
+const nextConfig = {
+  redirects: async () => {
+    return [
+      {
+        source: "/redirect",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/user/:userId",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/redirect-another-page",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
+
+export default nextConfig;
